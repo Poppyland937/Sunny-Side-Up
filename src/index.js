@@ -20,6 +20,9 @@ function displayTemperature(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
 
+  let icon = document.querySelector("#weather-icon");
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}"> `;
+
   temperatureNumber.innerHTML = temperature;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
